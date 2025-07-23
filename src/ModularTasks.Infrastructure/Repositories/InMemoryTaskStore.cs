@@ -1,8 +1,9 @@
 ﻿using ModularTasks.Core.Entities.ModularTasks.Core.Entities;
+using ModularTasks.Core.Interfaces;
 
 namespace ModularTasks.Infrastructure.Repositories
 {
-    public class InMemoryTaskStore
+    public class InMemoryTaskStore : ITaskRepository
     {
         private readonly Dictionary<Guid, TaskItem> _tasks = new();
         public Task<IEnumerable<TaskItem>> GetAllAsync()
